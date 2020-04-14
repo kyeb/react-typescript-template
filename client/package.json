@@ -1,0 +1,22 @@
+{
+  "name": "click-client",
+  "version": "1.0.0",
+  "main": "srcindex.html",
+  "license": "MIT",
+  "dependencies": {
+    "@reach/router": "^1.3.3",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "yarn tsc && parcel build src/index.html"
+  }
+}

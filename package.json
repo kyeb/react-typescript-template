@@ -1,0 +1,23 @@
+{
+  "name": "click",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "repository": "https://github.com/kyeb/click",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "client": "yarn workspace click-client dev",
+    "server": "yarn workspace click-server dev",
+    "build:client": "yarn workspace click-client build",
+    "build": "yarn build:client",
+    "start": "echo 'Not implemented for full project yet'"
+  },
+  "devDependencies": {
+    "prettier": "2.0.4"
+  }
+}
