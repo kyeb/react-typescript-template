@@ -22,14 +22,13 @@ require("dotenv").config();
 const logger = require("pino")();
 
 const session = expressSession({
-  secret: "mander dung",
+  secret: process.env.SESSION_SECRET || "some secret",
   resave: false,
   saveUninitialized: true,
 });
 
 import api from "./api";
 import auth from "./auth";
-// import passport from "./passport";
 
 require("./db").init();
 
@@ -37,23 +36,20 @@ const app = express();
 app.use(express.json());
 app.use(session);
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-
 app.use("/auth", auth);
 app.use("/api", api);
 
-// load the compiled react files, which will serve index.html and frontend JS bundles
-const reactPath = path.resolve(__dirname, "..", "client", "dist");
+// load the compiled React files, which will serve index.html and frontend JS bundles
+const reactPath = path.resolve(__dirname, "..", "..", "client", "dist");
 app.use(express.static(reactPath));
 
-// for all other routes, render index.html and let react router handle it
-app.get("*", (req, res) => {
+// for all other routes, render index.html and let the React router handle it
+app.get("*", (_req, res) => {
   res.sendFile(path.join(reactPath, "index.html"));
 });
 
 // catch fatal server errors
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   const status = err.status || 500;
   if (status === 500) {
     logger.error("The server errored when processing a request!");
@@ -66,7 +62,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// listen to env var for port, otherwise default to 3000.
 const port = process.env.PORT || 4225;
 const server = new http.Server(app);
 
