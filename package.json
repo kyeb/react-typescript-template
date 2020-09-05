@@ -1,20 +1,20 @@
 {
-  "name": "click",
+  "name": "react-ts-node-template",
   "version": "1.0.0",
-  "main": "index.js",
   "workspaces": [
     "client",
     "server"
   ],
   "repository": "https://github.com/kyeb/click",
-  "author": "",
+  "author": "Kye Burchard <kyeb@mit.edu>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "client": "yarn workspace click-client dev",
-    "server": "yarn workspace click-server dev",
-    "build:client": "yarn workspace click-client build",
+    "client": "yarn workspace react-ts-node-template-client dev",
+    "server": "yarn workspace react-ts-node-template-server dev",
+    "build:client": "yarn workspace react-ts-node-template-client build",
     "build": "yarn build:client",
+    "typecheck": "yarn workspace react-ts-node-template-client tsc",
     "start": "echo 'Not implemented for full project yet'"
   },
   "devDependencies": {

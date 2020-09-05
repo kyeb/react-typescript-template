@@ -62,7 +62,7 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-const port = process.env.PORT || 4225;
+const port = process.env.PORT || 3000;
 const server = new http.Server(app);
 
 server.listen(port, () => {

@@ -1,5 +1,5 @@
 {
-  "name": "click-server",
+  "name": "react-ts-node-template-server",
   "version": "1.0.0",
   "main": "build/server.js",
   "license": "MIT",
@@ -21,6 +21,6 @@
     "pino": "^6.2.0"
   },
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts | pino-pretty -t SYS:hh:MM:ss -i pid,hostname"
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node src/server.ts' | pino-pretty -t SYS:hh:MM:ss -i pid,hostname"
   }
 }
