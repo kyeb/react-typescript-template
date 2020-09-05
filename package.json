@@ -14,7 +14,7 @@
     "server": "yarn workspace react-ts-node-template-server dev",
     "build:client": "yarn workspace react-ts-node-template-client build",
     "build": "yarn build:client",
-    "typecheck": "yarn workspace react-ts-node-template-client tsc",
+    "typecheck": "yarn workspace react-ts-node-template-client tsc && yarn workspace react-ts-node-template-server tsc",
     "start": "echo 'Not implemented for full project yet'"
   },
   "devDependencies": {

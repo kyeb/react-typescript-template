@@ -4,18 +4,13 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "allowJs": true,
     "importHelpers": true,
-    "strict": false,
-    "sourceMap": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": false,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "noUnusedParameters": false,
     "esModuleInterop": true,
     "outDir": "build"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

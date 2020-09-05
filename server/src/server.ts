@@ -15,7 +15,7 @@
 
 import path from "path";
 import http from "http";
-import express from "express";
+import express, { Request, Response } from "express";
 import expressSession from "express-session";
 
 require("dotenv").config();
@@ -49,7 +49,7 @@ app.get("*", (_req, res) => {
 });
 
 // catch fatal server errors
-app.use((err, _req, res, _next) => {
+app.use((err: any, _req: Request, res: Response) => {
   const status = err.status || 500;
   if (status === 500) {
     logger.error("The server errored when processing a request!");
